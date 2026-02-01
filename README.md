@@ -7,6 +7,19 @@ Ce projet fournit une solution complète de traduction bidirectionnelle anglais-
     Frontend : Interface web responsive en HTML/JavaScript
     Extension : Extension Chrome pour traductions rapides
     Authentification : Sécurité Basic Auth pour l'API
+      Technique
+
+    Backend : Java 17, Jakarta EE 9, JAX-RS (Jersey)
+
+    Serveur : WildFly 26+ (compatible JBoss EAP)
+
+    Build Tool : Maven 3.6+
+
+    Frontend : HTML5, CSS3, Vanilla JavaScript
+
+    Sécurité : Basic Auth, CORS, Headers de sécurité
+
+    Format : JSON pour toutes les communications API
 
     Extension Chrome
     🪟 Sidepanel intégré dans Chrome
