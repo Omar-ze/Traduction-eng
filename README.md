@@ -40,7 +40,7 @@ python -m http.server 8000
 2. Tester l'API
 bash
 
-# Test de santé de l'API
+# Test de de l'API
 curl http://localhost:8080/translator/api/translate/test
 
 # Traduction exemple
@@ -73,53 +73,4 @@ cp target/translator.war wildfly/standalone/deployments/
 http://localhost:8080/translator/api/translate/test
 
 
-
-📁 Structure du Projet
-text
-
-translator-project/
-│
-├── pom.xml                                  
-├── README.md                                    
-│
-├── src/main/java/com/translator/
-│   ├── auth/                                    
-│   │   ├── BasicAuth.java                       
-│   │   ├── BasicAuthFilter.java                 
-│   │   └── UserService.java                     
-│   │
-│   ├── model/                                  
-│   │   └── TranslationRequest.java              
-│   │
-│   ├── resource/                               
-│   │   └── TranslatorResource.java              
-│   │
-│   ├── service/                                
-│   │   └── LLMTranslatorService.java          
-│   │
-│   └── filter/                               
-│       └── CorsFilter.java                  
-│
-├── src/main/webapp/WEB-INF/
-│   ├── web.xml                               
-│   └── jboss-web.xml                          
-│
-├── php-client/                                 
-│   ├── index.html                             
-│   ├── proxy.php                              
-│   ├── test.html                                
-│   └── favicon.ico                              
-│
-├── chrome-extension/                            
-│   ├── manifest.json                            
-│   ├── background.js                            
-│   ├── sidepanel.html                           
-│   ├── sidepanel.js                            
-│   ├── styles.css                              
-└── icons/                                   
-│
-└── scripts/                                     # SCRIPTS UTILES
-    ├── start-server.bat                         # Démarrage Windows
-    ├── test-api.bat                             # Tests API Windows
-    └── create-structure.bat                     # Création structure
 
