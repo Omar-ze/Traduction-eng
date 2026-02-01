@@ -1,0 +1,12 @@
+# Créer des utilisateurs de test
+/subsystem=elytron/filesystem-realm=translator-users:add(path=translator-users, relative-to=jboss.server.config.dir)
+
+/subsystem=elytron/filesystem-realm=translator-users:add-identity(identity=user1)
+/subsystem=elytron/filesystem-realm=translator-users:set-password(identity=user1, clear={password="userpass"})
+/subsystem=elytron/filesystem-realm=translator-users:add-identity-attribute(identity=user1, name=groups, value=["USER"])
+
+/subsystem=elytron/filesystem-realm=translator-users:add-identity(identity=admin)
+/subsystem=elytron/filesystem-realm=translator-users:set-password(identity=admin, clear={password="adminpass"})
+/subsystem=elytron/filesystem-realm=translator-users:add-identity-attribute(identity=admin, name=groups, value=["USER", "ADMIN"])
+
+echo "Utilisateurs créés!"

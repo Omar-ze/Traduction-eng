@@ -1,0 +1,60 @@
+# Configuration CLI pour WildFly
+
+# 1. Ajouter un datasource PostgreSQL
+/subsystem=datasources/data-source=TranslatorDS:add(
+    jndi-name=java:jboss/datasources/TranslatorDS,
+    driver-name=postgresql,
+    connection-url=jdbc:postgresql://localhost:5432/translator_db,
+    user-name=translator_user,
+    password=translator_pass
+)
+
+# 2. Configurer le security domain avec Elytron
+/subsystem=elytron/jdbc-realm=translator-realm:add(
+    principal-query=[
+        {
+            sql="SELECT password FROM users WHERE username = ?",
+            data-source=TranslatorDS,
+            clear-password-mapper={password-index=1},
+            attribute-mapping=[{index=2, to=groups}]
+        }
+    ]
+)
+
+/subsystem=elytron/security-domain=translator-domain:add(
+    default-realm=translator-realm,
+    permission-mapper=default-permission-mapper,
+    realms=[{realm=translator-realm, role-decoder=groups-to-roles}]
+)
+
+/subsystem=elytron/http-authentication-factory=translator-auth:add(
+    http-server-mechanism-factory=global,
+    security-domain=translator-domain,
+    mechanism-configurations=[{mechanism-name=BASIC}]
+)
+
+/subsystem=undertow/application-security-domain=translator-domain:add(
+    http-authentication-factory=translator-auth
+)
+
+# 3. Activer CORS
+/subsystem=undertow/configuration=filter/response-header=Access-Control-Allow-Origin:add(
+    header-name=Access-Control-Allow-Origin,
+    header-value=*
+)
+
+/subsystem=undertow/configuration=filter/response-header=Access-Control-Allow-Methods:add(
+    header-name=Access-Control-Allow-Methods,
+    header-value=GET,POST,PUT,DELETE,OPTIONS
+)
+
+/subsystem=undertow/configuration=filter/response-header=Access-Control-Allow-Headers:add(
+    header-name=Access-Control-Allow-Headers,
+    header-value=Content-Type,Authorization
+)
+
+/subsystem=undertow/server=default-server/host=default-host/filter-ref=Access-Control-Allow-Origin:add
+/subsystem=undertow/server=default-server/host=default-host/filter-ref=Access-Control-Allow-Methods:add
+/subsystem=undertow/server=default-server/host=default-host/filter-ref=Access-Control-Allow-Headers:add
+
+echo "Configuration WildFly terminée!"
