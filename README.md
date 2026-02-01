@@ -58,6 +58,7 @@ curl -X POST http://localhost:8080/translator/api/translate \
     "Charger l'extension non empaquetée"
 
     Sélectionnez le dossier chrome-extension/
+   
    🌍 Déploiement
 Sur WildFly
 bash
@@ -78,44 +79,44 @@ text
 
 translator-project/
 │
-├── pom.xml                                      # Configuration Maven
-├── README.md                                    # Documentation
+├── pom.xml                                  
+├── README.md                                    
 │
 ├── src/main/java/com/translator/
-│   ├── auth/                                    # AUTHENTIFICATION
-│   │   ├── BasicAuth.java                       # Annotation @BasicAuth
-│   │   ├── BasicAuthFilter.java                 # Filtre d'authentification
-│   │   └── UserService.java                     # Service utilisateurs
+│   ├── auth/                                    
+│   │   ├── BasicAuth.java                       
+│   │   ├── BasicAuthFilter.java                 
+│   │   └── UserService.java                     
 │   │
-│   ├── model/                                   # MODÈLES
-│   │   └── TranslationRequest.java              # Requête de traduction
+│   ├── model/                                  
+│   │   └── TranslationRequest.java              
 │   │
-│   ├── resource/                                # API REST
-│   │   └── TranslatorResource.java              # Endpoint principal
+│   ├── resource/                               
+│   │   └── TranslatorResource.java              
 │   │
-│   ├── service/                                 # SERVICES
-│   │   └── LLMTranslatorService.java            # Service de traduction
+│   ├── service/                                
+│   │   └── LLMTranslatorService.java          
 │   │
-│   └── filter/                                  # FILTRES
-│       └── CorsFilter.java                      # Filtre CORS global
+│   └── filter/                               
+│       └── CorsFilter.java                  
 │
 ├── src/main/webapp/WEB-INF/
-│   ├── web.xml                                  # Configuration web
-│   └── jboss-web.xml                            # Config WildFly (optionnel)
+│   ├── web.xml                               
+│   └── jboss-web.xml                          
 │
-├── php-client/                                  # CLIENT WEB
-│   ├── index.html                               # Interface principale
-│   ├── proxy.php                                # Proxy CORS (optionnel)
-│   ├── test.html                                # Page de test
-│   └── favicon.ico                              # Icône
+├── php-client/                                 
+│   ├── index.html                             
+│   ├── proxy.php                              
+│   ├── test.html                                
+│   └── favicon.ico                              
 │
-├── chrome-extension/                            # EXTENSION CHROME
-│   ├── manifest.json                            # Configuration extension
-│   ├── background.js                            # Script background
-│   ├── sidepanel.html                           # Interface sidepanel
-│   ├── sidepanel.js                             # Logique sidepanel
-│   ├── styles.css                               # Styles CSS
-│   └── icons/                                   # Icônes extension
+├── chrome-extension/                            
+│   ├── manifest.json                            
+│   ├── background.js                            
+│   ├── sidepanel.html                           
+│   ├── sidepanel.js                            
+│   ├── styles.css                              
+└── icons/                                   
 │
 └── scripts/                                     # SCRIPTS UTILES
     ├── start-server.bat                         # Démarrage Windows
