@@ -27,6 +27,7 @@ Ce projet fournit une solution complète de traduction bidirectionnelle anglais-
     📋 Copie automatique des résultats dans le presse-papier
 
 # Utilisation
+clone the repo:
     git clone https://github.com/Omar-ze/traduction.git
    
 1. Interface Web
@@ -34,8 +35,10 @@ bash
 
 # Lancer le serveur de développement frontend
 cd php-client
-python -m http.server 8000
+ http.server 8000
 # Accédez à: http://localhost:8000
+# Vedio de l'application :
+https://drive.google.com/file/d/1ftdMsiq_3cBG8BdY18N0qsEoOCsy4Euw/view?usp=drivesdk
 
 2. Tester l'API
 bash
