@@ -23,7 +23,6 @@ Ce projet fournit une solution complète de traduction bidirectionnelle anglais-
 # Utilisation
 clone the repo:
     git clone https://github.com/Omar-ze/traduction.git
-   
 1. Interface Web
  Lancer le serveur de développement frontend
 cd php-client
@@ -33,9 +32,8 @@ cd php-client
 # Vedio de l'application :
 https://drive.google.com/file/d/1ftdMsiq_3cBG8BdY18N0qsEoOCsy4Euw/view?usp=drivesdk
 
-2. Tester l'API
-bash
 
+2. Tester l'API 
 Test de de l'API
 curl http://localhost:8080/translator/api/translate/test
 
