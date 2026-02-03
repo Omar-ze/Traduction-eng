@@ -29,15 +29,18 @@ cd php-client
  http.server 8000
  Accédez à: http://localhost:8000
 
+
 # Vedio de l'application :
 https://drive.google.com/file/d/1ftdMsiq_3cBG8BdY18N0qsEoOCsy4Euw/view?usp=drivesdk
+
+
 
 
 2. Tester l'API 
 Test de de l'API
 curl http://localhost:8080/translator/api/translate/test
 
-# Traduction exemple
+Traduction exemple
 curl -X POST http://localhost:8080/translator/api/translate \
   -H "Content-Type: application/json" \
   -H "Authorization: Basic YWRtaW46cGFzc3dvcmQxMjM=" \
