@@ -1,7 +1,6 @@
 ## 🌐  Traducteur Anglais ↔ Darija - API REST Java
 Une application web Java complète de traduction entre l'anglais et le darija (arabe marocain), déployable
 sur WildFly avec interface web et extension Chrome.
-
 Ce projet fournit une solution complète de traduction bidirectionnelle anglais-darija implémentée comme une API REST Java avec :
     Backend : API REST sécurisée avec Jakarta EE
     Frontend : Interface web responsive en HTML/JavaScript
@@ -10,15 +9,10 @@ Ce projet fournit une solution complète de traduction bidirectionnelle anglais-
       Technique
 
     Backend : Java 17, Jakarta EE 9, JAX-RS (Jersey)
-
     Serveur : WildFly 26+ (compatible JBoss EAP)
-
     Build Tool : Maven 3.6+
-
-    Frontend : HTML5, CSS3, Vanilla JavaScript
-
+    Frontend : HTML5, CSS3, JavaScript
     Sécurité : Basic Auth, CORS, Headers de sécurité
-
     Format : JSON pour toutes les communications API
 
     Extension Chrome
@@ -31,19 +25,18 @@ clone the repo:
     git clone https://github.com/Omar-ze/traduction.git
    
 1. Interface Web
-bash
-
-# Lancer le serveur de développement frontend
+ Lancer le serveur de développement frontend
 cd php-client
  http.server 8000
-# Accédez à: http://localhost:8000
+ Accédez à: http://localhost:8000
+
 # Vedio de l'application :
 https://drive.google.com/file/d/1ftdMsiq_3cBG8BdY18N0qsEoOCsy4Euw/view?usp=drivesdk
 
 2. Tester l'API
 bash
 
-# Test de de l'API
+Test de de l'API
 curl http://localhost:8080/translator/api/translate/test
 
 # Traduction exemple
